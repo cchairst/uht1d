@@ -1,0 +1,522 @@
+warnings:
+  # ─────────────────────────────────────────────────────────────────────────
+  # LOW GLUCOSE WARNINGS  (BG below low threshold)
+  # ─────────────────────────────────────────────────────────────────────────
+
+  - warningType: "low"
+    scenario: "Your CGM vibrates with a low alert at 68 mg/dL during class. You feel shaky."
+    options:
+      - text: "Eat 15g of fast carbs right away and tell the teacher"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Wait until class ends to avoid disrupting the teacher"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Drink water and try to focus on your work"
+        affectGlucose: 0
+        affectInTime: 60
+      - text: "Take a small insulin dose to stabilize"
+        affectGlucose: -20
+        affectInTime: 60
+    correctOption: "Eat 15g of fast carbs right away and tell the teacher"
+
+  - warningType: "low"
+    scenario: "Your BG is 72 mg/dL with a down arrow at 10 AM. You have a snack in your bag."
+    options:
+      - text: "Eat your snack now and recheck in 15 minutes"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Wait until lunch since 72 is not technically low"
+        affectGlucose: -15
+        affectInTime: 60
+      - text: "Take your snack but also give a small bolus"
+        affectGlucose: -5
+        affectInTime: 60
+      - text: "Go to the nurse and wait there until lunch"
+        affectGlucose: -10
+        affectInTime: 60
+    correctOption: "Eat your snack now and recheck in 15 minutes"
+
+  - warningType: "low"
+    scenario: "You treat a low with juice. Fifteen minutes later your BG is still 64 mg/dL."
+    options:
+      - text: "Treat again with another 15g of fast carbs and recheck"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Wait another 30 minutes before doing anything else"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Take a correction bolus to help stabilize"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Eat a full meal immediately"
+        affectGlucose: 10
+        affectInTime: 120
+    correctOption: "Treat again with another 15g of fast carbs and recheck"
+
+  - warningType: "low"
+    scenario: "Your BG is 78 mg/dL with a down arrow before a math test."
+    options:
+      - text: "Eat 15g of fast carbs before starting and let the teacher know"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Start the test and eat something if you feel bad"
+        affectGlucose: -15
+        affectInTime: 60
+      - text: "Skip the test today"
+        affectGlucose: 0
+        affectInTime: 60
+      - text: "Ask the teacher to postpone while you take insulin"
+        affectGlucose: -20
+        affectInTime: 60
+    correctOption: "Eat 15g of fast carbs before starting and let the teacher know"
+
+  - warningType: "low"
+    scenario: "Halfway through PE your CGM shows 58 mg/dL and you feel dizzy and weak."
+    options:
+      - text: "Stop activity immediately, eat fast carbs, and sit down"
+        affectGlucose: 30
+        affectInTime: 60
+      - text: "Push through until the period ends"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Drink water and keep moving at a slower pace"
+        affectGlucose: -5
+        affectInTime: 60
+      - text: "Take a small insulin dose to stabilize"
+        affectGlucose: -25
+        affectInTime: 60
+    correctOption: "Stop activity immediately, eat fast carbs, and sit down"
+
+  - warningType: "low"
+    scenario: "Your BG is 55 mg/dL at 3 PM and you feel fine with no symptoms."
+    options:
+      - text: "Treat the low with 15g of fast carbs even though you feel okay"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Feeling fine means no action is needed — check again at dismissal"
+        affectGlucose: -15
+        affectInTime: 60
+      - text: "Drink water to help flush out the low"
+        affectGlucose: 0
+        affectInTime: 60
+      - text: "Take a glucose tablet only if symptoms start"
+        affectGlucose: -10
+        affectInTime: 60
+    correctOption: "Treat the low with 15g of fast carbs even though you feel okay"
+
+  - warningType: "low"
+    scenario: "Your BG is 75 mg/dL right before lunch. You are about to bolus."
+    options:
+      - text: "Eat 15g of fast carbs first, then bolus once BG is stable"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Bolus your full meal dose immediately and eat quickly"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Skip your bolus entirely for this meal"
+        affectGlucose: 30
+        affectInTime: 120
+      - text: "Cut your bolus dose in half and eat your full meal"
+        affectGlucose: 15
+        affectInTime: 120
+    correctOption: "Eat 15g of fast carbs first, then bolus once BG is stable"
+
+  - warningType: "low"
+    scenario: "Your BG is 110 mg/dL right before PE. Exercise will drop it further."
+    options:
+      - text: "Eat 15-20g of carbs to bring your BG up before activity"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Take a small correction bolus before exercising"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Skip PE to keep your blood sugar stable"
+        affectGlucose: 0
+        affectInTime: 60
+      - text: "Start PE and check your BG only if you feel bad"
+        affectGlucose: -15
+        affectInTime: 60
+    correctOption: "Eat 15-20g of carbs to bring your BG up before activity"
+
+  - warningType: "low"
+    scenario: "Walking home from school you start to feel shaky. You have glucose tabs."
+    options:
+      - text: "Stop, eat 15g of carbs, wait 15 minutes, recheck before continuing"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Keep walking and check when you get home"
+        affectGlucose: -15
+        affectInTime: 60
+      - text: "Run home quickly so you can check your BG there"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Call a friend to walk with you and check later"
+        affectGlucose: -10
+        affectInTime: 60
+    correctOption: "Stop, eat 15g of carbs, wait 15 minutes, recheck before continuing"
+
+  - warningType: "low"
+    scenario: "Your CGM says 95 but you feel low. Symptoms may be ahead of the sensor."
+    options:
+      - text: "Do a fingerstick to confirm — symptoms can precede a CGM drop"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Trust the CGM and ignore the feeling"
+        affectGlucose: -15
+        affectInTime: 60
+      - text: "Take a correction bolus since the CGM must be wrong"
+        affectGlucose: -25
+        affectInTime: 60
+      - text: "Eat a large snack just in case"
+        affectGlucose: 35
+        affectInTime: 60
+    correctOption: "Do a fingerstick to confirm — symptoms can precede a CGM drop"
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # HIGH GLUCOSE WARNINGS  (BG above normal, below very-high threshold)
+  # ─────────────────────────────────────────────────────────────────────────
+
+  - warningType: "high"
+    scenario: "Your CGM shows 185 mg/dL with a flat arrow after arriving at school."
+    options:
+      - text: "Monitor and check again before your mid-morning snack"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Take a correction bolus immediately"
+        affectGlucose: -30
+        affectInTime: 60
+      - text: "Tell the nurse you need to go home"
+        affectGlucose: 0
+        affectInTime: 60
+      - text: "Skip your snack to bring the number down"
+        affectGlucose: -5
+        affectInTime: 60
+    correctOption: "Monitor and check again before your mid-morning snack"
+
+  - warningType: "high"
+    scenario: "You forgot to bolus for your afternoon snack and your BG is now 190 mg/dL."
+    options:
+      - text: "Take a correction bolus based on your ISF and target BG"
+        affectGlucose: -25
+        affectInTime: 60
+      - text: "Take a full meal bolus to compensate"
+        affectGlucose: -40
+        affectInTime: 60
+      - text: "Skip dinner to avoid another spike"
+        affectGlucose: -5
+        affectInTime: 120
+      - text: "Do nothing since it will normalize by bedtime"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Take a correction bolus based on your ISF and target BG"
+
+  - warningType: "high"
+    scenario: "It is pizza day and your BG is rising 2 hours after lunch. BG is 195 mg/dL."
+    options:
+      - text: "Check your CGM more frequently and apply a small correction if needed"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Skip the bolus since pizza does not have many carbs"
+        affectGlucose: 15
+        affectInTime: 60
+      - text: "Double your next meal bolus to cover the delayed rise"
+        affectGlucose: -40
+        affectInTime: 60
+      - text: "Eat a large snack to give your body energy"
+        affectGlucose: 20
+        affectInTime: 60
+    correctOption: "Check your CGM more frequently and apply a small correction if needed"
+
+  - warningType: "high"
+    scenario: "You are hungry at 2 PM but your CGM shows 195 mg/dL. You want a snack."
+    options:
+      - text: "Choose a low-carb snack and monitor; wait for BG to come down"
+        affectGlucose: -15
+        affectInTime: 60
+      - text: "Eat a full snack with a correction bolus right away"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Skip the snack entirely and wait for dinner"
+        affectGlucose: -5
+        affectInTime: 120
+      - text: "Take a correction bolus and then eat a high-carb snack"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Choose a low-carb snack and monitor; wait for BG to come down"
+
+  - warningType: "high"
+    scenario: "You feel foggy during afternoon class. Your BG is 200 mg/dL."
+    options:
+      - text: "Give a correction bolus, drink water, and tell the nurse"
+        affectGlucose: -25
+        affectInTime: 60
+      - text: "Eat lunch as normal and correct later"
+        affectGlucose: 15
+        affectInTime: 60
+      - text: "Skip your next meal since your blood sugar is already high"
+        affectGlucose: -5
+        affectInTime: 120
+      - text: "Wait until your next scheduled check"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Give a correction bolus, drink water, and tell the nurse"
+
+  - warningType: "high"
+    scenario: "Your BG has risen to 185 mg/dL since arriving at school this morning."
+    options:
+      - text: "Apply a small correction bolus based on your ISF"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Exercise to bring it down without insulin"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Eat a high-protein snack to stabilize"
+        affectGlucose: 10
+        affectInTime: 60
+      - text: "Ignore it and check at lunch"
+        affectGlucose: 15
+        affectInTime: 60
+    correctOption: "Apply a small correction bolus based on your ISF"
+
+  - warningType: "high"
+    scenario: "Your BG is 190 mg/dL before bed. Should you take a correction dose?"
+    options:
+      - text: "Follow your correction formula, then tell a parent"
+        affectGlucose: -25
+        affectInTime: 60
+      - text: "Never take insulin at night — it is too risky"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Skip it and wake up early to recheck"
+        affectGlucose: 15
+        affectInTime: 60
+      - text: "Eat a small snack to help your body balance out"
+        affectGlucose: 20
+        affectInTime: 60
+    correctOption: "Follow your correction formula, then tell a parent"
+
+  - warningType: "high"
+    scenario: "You ate only half your lunch after getting a full bolus. BG is now 185 mg/dL."
+    options:
+      - text: "Monitor closely and give 15g of fast carbs if BG drops below 80"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Give another correction bolus to compensate"
+        affectGlucose: -30
+        affectInTime: 60
+      - text: "Skip your afternoon snack to balance the missed carbs"
+        affectGlucose: -5
+        affectInTime: 60
+      - text: "Administer extra basal insulin to stabilize"
+        affectGlucose: -25
+        affectInTime: 120
+    correctOption: "Monitor closely and give 15g of fast carbs if BG drops below 80"
+
+  - warningType: "high"
+    scenario: "Your pump site has been in 4 days. BG has been elevated all morning at 185 mg/dL."
+    options:
+      - text: "Change your pump site — overused sites absorb insulin poorly"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Increase your ICR temporarily"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Switch to a lower-carb lunch today"
+        affectGlucose: -5
+        affectInTime: 120
+      - text: "Check your CGM sensor instead"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Change your pump site — overused sites absorb insulin poorly"
+
+  - warningType: "high"
+    scenario: "Your BG rebounded to 185 mg/dL an hour after soccer practice ended."
+    options:
+      - text: "Apply a small correction bolus and monitor for the next hour"
+        affectGlucose: -20
+        affectInTime: 60
+      - text: "Exercise again to bring it back down"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Eat a large meal since you burned a lot of calories"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Do nothing — it will come down on its own"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Apply a small correction bolus and monitor for the next hour"
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # VERY HIGH GLUCOSE WARNINGS  (BG at or above high threshold)
+  # ─────────────────────────────────────────────────────────────────────────
+
+  - warningType: "veryHigh"
+    scenario: "Your BG is 260 mg/dL before lunch. You feel thirsty and need to use the bathroom."
+    options:
+      - text: "Give a correction bolus, drink water, and tell the nurse"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Eat lunch as normal and correct later"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Skip lunch since your blood sugar is already high"
+        affectGlucose: -10
+        affectInTime: 120
+      - text: "Wait until your next scheduled check"
+        affectGlucose: 15
+        affectInTime: 60
+    correctOption: "Give a correction bolus, drink water, and tell the nurse"
+
+  - warningType: "veryHigh"
+    scenario: "You notice fruity breath and feel nauseous. Your BG is 310 mg/dL."
+    options:
+      - text: "Check ketones and contact an adult right away — this could be DKA"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "It is probably a stomach virus — eat crackers"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Drink a sports drink to hydrate"
+        affectGlucose: 15
+        affectInTime: 60
+      - text: "Exercise to bring the BG down quickly"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Check ketones and contact an adult right away — this could be DKA"
+
+  - warningType: "veryHigh"
+    scenario: "Your BG has been above 280 mg/dL for 3 hours despite one correction bolus."
+    options:
+      - text: "Check pump site, check ketones, drink water, contact a parent or nurse"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Take another large correction dose on your own"
+        affectGlucose: -60
+        affectInTime: 60
+      - text: "Exercise to bring the blood sugar down quickly"
+        affectGlucose: -10
+        affectInTime: 60
+      - text: "Eat a low-carb snack to balance things out"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Check pump site, check ketones, drink water, contact a parent or nurse"
+
+  - warningType: "veryHigh"
+    scenario: "Your pump is alarming No Delivery and your BG is 280 mg/dL."
+    options:
+      - text: "Check the site, tell the nurse, and use your MDI backup if needed"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Silence the alarm and wait to see if it clears"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Remove the pump and go home immediately"
+        affectGlucose: 15
+        affectInTime: 60
+      - text: "Eat nothing until your blood sugar comes down"
+        affectGlucose: -5
+        affectInTime: 120
+    correctOption: "Check the site, tell the nurse, and use your MDI backup if needed"
+
+  - warningType: "veryHigh"
+    scenario: "You forgot basal insulin last night. BG is 310 mg/dL and ketones are 0.6 mmol/L."
+    options:
+      - text: "Tell a parent right away so your insulin plan can be adjusted"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Take twice your usual morning bolus to make up for it"
+        affectGlucose: -70
+        affectInTime: 60
+      - text: "Skip insulin this morning since you already missed a dose"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Go to school and tell the nurse when you arrive"
+        affectGlucose: 10
+        affectInTime: 60
+    correctOption: "Tell a parent right away so your insulin plan can be adjusted"
+
+  - warningType: "veryHigh"
+    scenario: "You wake up at 7 AM with a BG of 285 mg/dL. What do you do before breakfast?"
+    options:
+      - text: "Take a correction dose based on your ISF, then eat breakfast"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Skip breakfast until your blood sugar comes down on its own"
+        affectGlucose: -10
+        affectInTime: 120
+      - text: "Drink a glass of juice to help your body balance out"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Go back to sleep for an hour and recheck"
+        affectGlucose: 15
+        affectInTime: 60
+    correctOption: "Take a correction dose based on your ISF, then eat breakfast"
+
+  - warningType: "veryHigh"
+    scenario: "You are vomiting and cannot keep food down. BG is 290 mg/dL, ketones 1.0 mmol/L."
+    options:
+      - text: "Tell a parent or nurse right away — sick day rules mean you still need insulin"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Stop all insulin since you cannot eat"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Eat crackers to settle your stomach before checking again"
+        affectGlucose: 15
+        affectInTime: 60
+      - text: "Drink juice to bring ketones down"
+        affectGlucose: 20
+        affectInTime: 60
+    correctOption: "Tell a parent or nurse right away — sick day rules mean you still need insulin"
+
+  - warningType: "veryHigh"
+    scenario: "Your ketones are 1.8 mmol/L and BG is 340 mg/dL. What do you do right now?"
+    options:
+      - text: "Contact a parent and your diabetes care team immediately"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Exercise to burn off the ketones"
+        affectGlucose: 10
+        affectInTime: 60
+      - text: "Drink a sports drink to hydrate"
+        affectGlucose: 15
+        affectInTime: 60
+      - text: "Take an extra snack and recheck in 2 hours"
+        affectGlucose: 20
+        affectInTime: 120
+    correctOption: "Contact a parent and your diabetes care team immediately"
+
+  - warningType: "veryHigh"
+    scenario: "Your BG is 300 mg/dL and you have ketones before PE class."
+    options:
+      - text: "Skip exercise — exercise with ketones can make DKA worse"
+        affectGlucose: -40
+        affectInTime: 60
+      - text: "Exercise — it will help bring the blood sugar down"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Do light stretching only"
+        affectGlucose: 10
+        affectInTime: 60
+      - text: "Physical activity burns off ketones directly"
+        affectGlucose: 15
+        affectInTime: 60
+    correctOption: "Skip exercise — exercise with ketones can make DKA worse"
+
+  - warningType: "veryHigh"
+    scenario: "Your BG climbed to 270 mg/dL and your CGM shows a double up arrow."
+    options:
+      - text: "Give a correction bolus now and recheck in 1 hour"
+        affectGlucose: -50
+        affectInTime: 60
+      - text: "Eat carbohydrates to give your body energy"
+        affectGlucose: 25
+        affectInTime: 60
+      - text: "Have a cold snack like ice cream to cool down"
+        affectGlucose: 20
+        affectInTime: 60
+      - text: "Take no action and wait it out"
+        affectGlucose: 20
+        affectInTime: 60
+    correctOption: "Give a correction bolus now and recheck in 1 hour"
