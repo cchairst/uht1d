@@ -68,6 +68,7 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
 
   late AnimationController _pulseController;
   late Animation<double> _pulseAnimation;
+  double _chartTime = 0.0;
 
   @override
   void initState() {
@@ -103,6 +104,7 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
     glucoseController.nextIterationOfPredictions(
         patientController, affectGlucose, affectInTime);
     setState(() {
+      _chartTime += 60.0;
       warnings = glucoseController.getWarningsList();
       glucosePredictions = glucoseController.getPredictionsList();
       iteration++;
@@ -344,7 +346,12 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
 
   // ─── Chart ─────────────────────────────────────────────────────────────────
   Widget _buildGlucoseChart() {
-    List<FlSpot> chartData = [...glucosePredictions];
+    // Transform spots to use an absolute time axis
+    final absolutePredictions = glucosePredictions
+        .map((spot) => FlSpot(spot.x + _chartTime, spot.y))
+        .toList();
+
+    List<FlSpot> chartData = [...glucosePredictions]; // This is relative time
     if (selectedAnswer.isNotEmpty) {
       for (int x = 0; x < chartData.length; x++) {
         if (chartData[x].x == selectedAnswerEffectTime.toDouble()) {
@@ -353,6 +360,11 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
         }
       }
     }
+    // Transform the potential-answer line as well
+    final absoluteChartData = chartData
+        .map((spot) => FlSpot(spot.x + _chartTime, spot.y))
+        .toList();
+
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(20),
@@ -379,6 +391,8 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
         SizedBox(
           height: 180,
           child: LineChart(LineChartData(
+            minX: _chartTime,
+            maxX: _chartTime + 300.0, // 5-hour window
             minY: 0,
             maxY: 300,
             gridData: FlGridData(
@@ -407,8 +421,7 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
                 sideTitles: SideTitles(
                   showTitles: true,
                   interval: 60,
-                  getTitlesWidget: (v, _) => Text(
-                      '+${(v / 60).round()}h',
+                  getTitlesWidget: (v, _) => Text('${(v / 60).round()}h',
                       style: GoogleFonts.poppins(
                           fontSize: 9, color: Colors.white60)),
                 ),
@@ -418,14 +431,14 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
             lineBarsData: [
               if (selectedAnswer.isNotEmpty)
                 LineChartBarData(
-                    spots: glucosePredictions,
+                    spots: absolutePredictions,
                     isCurved: true,
                     color: Colors.white.withOpacity(0.3),
                     barWidth: 2,
                     dotData: const FlDotData(show: false),
                     dashArray: [5, 5]),
               LineChartBarData(
-                spots: chartData,
+                spots: absoluteChartData,
                 isCurved: true,
                 color: selectedAnswer.isNotEmpty
                     ? const Color(0xFF3B82F6)
@@ -495,151 +508,147 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
     }
 
     return Container(
-      color: Colors.black54,
-      child: Center(
-        child: Container(
-          margin: const EdgeInsets.all(20),
-          padding: const EdgeInsets.all(22),
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
-            ),
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: wc.withOpacity(0.5), width: 2),
-            boxShadow: [
-              BoxShadow(
-                  color: wc.withOpacity(0.3),
-                  blurRadius: 30,
-                  spreadRadius: 5)
-            ],
-          ),
-          child: SingleChildScrollView(
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              // Progress pill
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.08),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  'Question ${totalAnswers + 1} of $maxQuestions',
-                  style: GoogleFonts.poppins(
-                      fontSize: 12,
-                      color: Colors.white54,
-                      fontWeight: FontWeight.w500),
-                ),
-              ),
-              const SizedBox(height: 14),
-              // Header
-              Row(children: [
-                Text(we, style: const TextStyle(fontSize: 30)),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(warning.title.toUpperCase(),
-                            style: GoogleFonts.poppins(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: wc)),
-                        Text('Alert in ${warning.time.toInt()} min',
-                            style: GoogleFonts.poppins(
-                                fontSize: 13, color: Colors.white70)),
-                      ]),
-                ),
-              ]),
-              const SizedBox(height: 14),
-              // Scenario
-              Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: wc.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: wc.withOpacity(0.3)),
-                ),
-                child: Text(
-                  warning.scenario,
-                  style: GoogleFonts.poppins(
-                      fontSize: 14,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      height: 1.4),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: 16),
-              // Options
-              ...warning.options.map((option) {
-                bool isSel = option.text == selectedAnswer;
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 9),
-                  child: Material(
-                    color: isSel
-                        ? const Color(0xFF3B82F6).withOpacity(0.2)
-                        : Colors.white.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(12),
-                    child: InkWell(
-                      onTap: () => answerSelectionHandler(
-                          option, warning.correctOption, warning),
-                      borderRadius: BorderRadius.circular(12),
-                      child: Container(
-                        padding: const EdgeInsets.all(14),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: isSel
-                                ? const Color(0xFF3B82F6)
-                                : Colors.white.withOpacity(0.2),
-                            width: isSel ? 2 : 1,
-                          ),
-                        ),
-                        child: Row(children: [
-                          Container(
-                            width: 22,
-                            height: 22,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: isSel
-                                  ? const Color(0xFF3B82F6)
-                                  : Colors.transparent,
-                              border: Border.all(
-                                color: isSel
-                                    ? const Color(0xFF3B82F6)
-                                    : Colors.white54,
-                                width: 2,
-                              ),
-                            ),
-                            child: isSel
-                                ? const Icon(Icons.check,
-                                    size: 14, color: Colors.white)
-                                : null,
-                          ),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: Text(option.text,
-                                style: GoogleFonts.poppins(
-                                    fontSize: 13, color: Colors.white)),
-                          ),
-                        ]),
-                      ),
-                    ),
-                  ),
-                );
-              }),
-              if (selectedAnswer.isNotEmpty) ...[
-                const SizedBox(height: 12),
-                Text('👆 Tap again to confirm',
-                    style: GoogleFonts.poppins(
-                        fontSize: 12, color: const Color(0xFF60A5FA))),
-              ],
-            ]),
-          ),
+        width: 450,
+        margin: const EdgeInsets.fromLTRB(0, 16, 16, 16),
+        padding: const EdgeInsets.all(22),
+        decoration: BoxDecoration(
+        gradient: const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
         ),
-      ),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: wc.withOpacity(0.5), width: 2),
+        boxShadow: [
+        BoxShadow(
+        color: wc.withOpacity(0.3),
+        blurRadius: 30,
+        spreadRadius: 5)
+        ],
+        ),
+        child: SingleChildScrollView(
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+        // Progress pill
+        Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.08),
+        borderRadius: BorderRadius.circular(20),
+        ),
+        child: Text(
+        'Question ${totalAnswers + 1} of $maxQuestions',
+        style: GoogleFonts.poppins(
+        fontSize: 12,
+        color: Colors.white54,
+        fontWeight: FontWeight.w500),
+        ),
+        ),
+        const SizedBox(height: 14),
+        // Header
+        Row(children: [
+        Text(we, style: const TextStyle(fontSize: 30)),
+        const SizedBox(width: 10),
+        Expanded(
+        child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+        Text(warning.title.toUpperCase(),
+        style: GoogleFonts.poppins(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: wc)),
+        Text('Alert in ${warning.time.toInt()} min',
+        style: GoogleFonts.poppins(
+        fontSize: 13, color: Colors.white70)),
+        ]),
+        ),
+        ]),
+        const SizedBox(height: 14),
+        // Scenario
+        Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+        color: wc.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: wc.withOpacity(0.3)),
+        ),
+        child: Text(
+        warning.scenario,
+        style: GoogleFonts.poppins(
+        fontSize: 14,
+        color: Colors.white,
+        fontWeight: FontWeight.w500,
+        height: 1.4),
+        textAlign: TextAlign.center,
+        ),
+        ),
+        const SizedBox(height: 16),
+        // Options
+        ...warning.options.map((option) {
+        bool isSel = option.text == selectedAnswer;
+        return Padding(
+        padding: const EdgeInsets.only(bottom: 9),
+        child: Material(
+        color: isSel
+        ? const Color(0xFF3B82F6).withOpacity(0.2)
+        : Colors.white.withOpacity(0.05),
+        borderRadius: BorderRadius.circular(12),
+        child: InkWell(
+        onTap: () => answerSelectionHandler(
+        option, warning.correctOption, warning),
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+        color: isSel
+        ? const Color(0xFF3B82F6)
+        : Colors.white.withOpacity(0.2),
+        width: isSel ? 2 : 1,
+        ),
+        ),
+        child: Row(children: [
+        Container(
+        width: 22,
+        height: 22,
+        decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isSel
+        ? const Color(0xFF3B82F6)
+        : Colors.transparent,
+        border: Border.all(
+        color: isSel
+        ? const Color(0xFF3B82F6)
+        : Colors.white54,
+        width: 2,
+        ),
+        ),
+        child: isSel
+        ? const Icon(Icons.check,
+        size: 14, color: Colors.white)
+        : null,
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+        child: Text(option.text,
+        style: GoogleFonts.poppins(
+        fontSize: 13, color: Colors.white)),
+        ),
+        ]),
+        ),
+        ),
+        ),
+        );
+        }),
+        if (selectedAnswer.isNotEmpty) ...[
+        const SizedBox(height: 12),
+        Text('👆 Tap again to confirm',
+        style: GoogleFonts.poppins(
+        fontSize: 12, color: const Color(0xFF60A5FA))),
+        ],
+        ]),
+        ),
     );
   }
 
@@ -1394,9 +1403,17 @@ class _ImprovedGlucoseSimulationState extends State<ImprovedGlucoseSimulation>
               _buildHeader(),
               _buildStatsBar(),
               _buildCurrentGlucoseDisplay(),
-              Expanded(child: _buildGlucoseChart()),
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(child: _buildGlucoseChart()),
+                    if (warnings.isNotEmpty)
+                      _buildWarningModal(warnings.first),
+                  ],
+                ),
+              ),
             ]),
-            if (warnings.isNotEmpty) _buildWarningModal(warnings.first),
             if (showFeedback)
               Positioned(
                 bottom: 0,

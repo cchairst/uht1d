@@ -1,0 +1,1461 @@
+questions:
+  # ── MORNING ROUTINE ──────────────────────────────────────────────────────
+  - question: "You wake up at 7 AM and your CGM shows 240 mg/dL. What should you do before breakfast?"
+    time: "07:00"
+    options:
+      - text: "Take a correction dose of insulin based on your ISF, then eat breakfast"
+        glucose_delta: -50
+        effect_after: 60
+      - text: "Skip breakfast until your blood sugar comes down on its own"
+        glucose_delta: -10
+        effect_after: 120
+      - text: "Drink a glass of juice to help your body balance out"
+        glucose_delta: 20
+        effect_after: 30
+      - text: "Go back to sleep for an hour and recheck"
+        glucose_delta: 15
+        effect_after: 60
+    answer: "Take a correction dose of insulin based on your ISF, then eat breakfast"
+
+  - question: "Your CGM shows 62 mg/dL with a down arrow when you wake up. What do you do first?"
+    time: "07:00"
+    options:
+      - text: "Eat 15 grams of fast carbs like juice or glucose tabs before anything else"
+        glucose_delta: 30
+        effect_after: 15
+      - text: "Take your morning insulin and eat breakfast right away"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Skip breakfast since you are not hungry"
+        glucose_delta: -15
+        effect_after: 60
+      - text: "Do your morning routine and check again in 30 minutes"
+        glucose_delta: -20
+        effect_after: 30
+    answer: "Eat 15 grams of fast carbs like juice or glucose tabs before anything else"
+
+  - question: "You forgot your basal insulin last night. You wake up at 310 mg/dL. What is the most important thing to do?"
+    time: "07:00"
+    options:
+      - text: "Tell a parent or caregiver right away so your insulin plan can be adjusted"
+        glucose_delta: -50
+        effect_after: 60
+      - text: "Take twice your usual morning bolus to make up for it"
+        glucose_delta: -70
+        effect_after: 60
+      - text: "Skip insulin this morning since you already missed a dose"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "Go to school and tell the nurse when you arrive"
+        glucose_delta: 15
+        effect_after: 60
+    answer: "Tell a parent or caregiver right away so your insulin plan can be adjusted"
+
+  - question: "Your BG is 145 mg/dL. You eat 45g of carbs. Your ICR is 1:15. How many units do you take?"
+    time: "07:15"
+    options:
+      - text: "3 units"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "1 unit"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "2 units"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "4 units"
+        glucose_delta: -20
+        effect_after: 60
+    answer: "3 units"
+
+  - question: "Your BG is 88 mg/dL. You plan to eat breakfast in 20 minutes. When should you take your rapid-acting insulin?"
+    time: "07:10"
+    options:
+      - text: "Take it about 15 minutes before or at the start of your meal"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "Take it right now so it is fully active when you eat"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Skip it since your blood sugar is already in range"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "Take it after you finish eating"
+        glucose_delta: 25
+        effect_after: 60
+    answer: "Take it about 15 minutes before or at the start of your meal"
+
+  - question: "You are packing your bag for school. Which of the following should you always bring?"
+    time: "07:30"
+    options:
+      - text: "Extra insulin, fast-acting carbs, your meter or CGM supplies, and an emergency contact card"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Just your CGM since it handles everything automatically"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "A snack and your homework — the nurse handles the rest"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Your pump remote only"
+        glucose_delta: -15
+        effect_after: 60
+    answer: "Extra insulin, fast-acting carbs, your meter or CGM supplies, and an emergency contact card"
+
+  - question: "Your pump site looks red and swollen before school. What should you do?"
+    time: "07:30"
+    options:
+      - text: "Change the site before school and tell a parent"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Leave it and change it after school to avoid being late"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "Cover it with a bandage and ignore the redness"
+        glucose_delta: 25
+        effect_after: 60
+      - text: "Disconnect the pump until the redness clears"
+        glucose_delta: 35
+        effect_after: 60
+    answer: "Change the site before school and tell a parent"
+
+  - question: "Your CGM sensor fell off in the shower with no replacement. How do you manage today?"
+    time: "07:45"
+    options:
+      - text: "Switch to fingerstick checks throughout the day and follow your usual insulin plan"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Guess how you feel and skip insulin until you get a new sensor"
+        glucose_delta: 50
+        effect_after: 60
+      - text: "Avoid eating until a new sensor is placed"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Ask the nurse to monitor you without any checks"
+        glucose_delta: 20
+        effect_after: 60
+    answer: "Switch to fingerstick checks throughout the day and follow your usual insulin plan"
+
+  - question: "You ate 60g of carbs. ICR is 1:10, BG was 170. Target 120, ISF 50. Total bolus?"
+    time: "07:15"
+    options:
+      - text: "7 units"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "6 units"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "5 units"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "8 units"
+        glucose_delta: -20
+        effect_after: 60
+    answer: "7 units"
+
+  - question: "You bolused for breakfast but only ate half. You are running late. What should you do?"
+    time: "07:45"
+    options:
+      - text: "Bring fast-acting carbs with you and monitor for low blood sugar"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "Take more insulin when you get to school to even things out"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Nothing — your body will balance it out"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Skip your morning snack to compensate"
+        glucose_delta: -25
+        effect_after: 60
+    answer: "Bring fast-acting carbs with you and monitor for low blood sugar"
+
+  # ── AT SCHOOL — MORNING ──────────────────────────────────────────────────
+  - question: "You arrive at school and your CGM shows 185 mg/dL with a flat arrow. You feel fine."
+    time: "09:00"
+    options:
+      - text: "Monitor and check again before your mid-morning snack"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Take a correction bolus immediately"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Tell the nurse you need to go home"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Skip your snack to bring the number down"
+        glucose_delta: -5
+        effect_after: 60
+    answer: "Monitor and check again before your mid-morning snack"
+
+  - question: "During first period your CGM vibrates — low alert at 68 mg/dL. You feel shaky."
+    time: "09:30"
+    options:
+      - text: "Excuse yourself or tell the teacher, then eat 15g of fast carbs right away"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Wait until class ends to avoid disrupting the teacher"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Drink water and try to focus on your work"
+        glucose_delta: -5
+        effect_after: 30
+      - text: "Take a small insulin dose to stabilize"
+        glucose_delta: -25
+        effect_after: 30
+    answer: "Excuse yourself or tell the teacher, then eat 15g of fast carbs right away"
+
+  - question: "BG was 90 at arrival. By 10 AM it is 72 mg/dL with a down arrow. You have a snack."
+    time: "10:00"
+    options:
+      - text: "Eat your snack now and recheck in 15 minutes"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Wait until lunch since 72 is not technically low"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Take your snack but also give a small bolus"
+        glucose_delta: -5
+        effect_after: 30
+      - text: "Go to the nurse and wait there until lunch"
+        glucose_delta: -10
+        effect_after: 30
+    answer: "Eat your snack now and recheck in 15 minutes"
+
+  - question: "A teacher tells you that you cannot use your CGM during a quiz. What should you do?"
+    time: "10:00"
+    options:
+      - text: "Politely explain your 504 plan and that managing your diabetes cannot wait"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Put it away and hope for the best"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Hide it under your desk and use it anyway"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Walk out of class to go to the nurse"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Politely explain your 504 plan and that managing your diabetes cannot wait"
+
+  - question: "You feel foggy and irritable during math class. Stress or low blood sugar?"
+    time: "10:30"
+    options:
+      - text: "Check your blood sugar right away"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Assume it is stress and keep working"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Ask to go to the water fountain"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "Eat your whole lunch early just in case"
+        glucose_delta: 40
+        effect_after: 30
+    answer: "Check your blood sugar right away"
+
+  # ── LUNCH ────────────────────────────────────────────────────────────────
+  - question: "BG 220 before lunch. 50g carbs. ICR 1:10, ISF 50, target 120. How much do you bolus?"
+    time: "12:00"
+    options:
+      - text: "7 units"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "5 units"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "6 units"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "4 units"
+        glucose_delta: 30
+        effect_after: 60
+    answer: "7 units"
+
+  - question: "You bolused for your full lunch but only ate half of it. What should you watch for?"
+    time: "12:30"
+    options:
+      - text: "Low blood sugar because you took more insulin than you needed"
+        glucose_delta: -25
+        effect_after: 60
+      - text: "High blood sugar from the bolus not matching the food"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Nothing — your pump will adjust automatically"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Ketones because you did not finish eating"
+        glucose_delta: -15
+        effect_after: 60
+    answer: "Low blood sugar because you took more insulin than you needed"
+
+  - question: "It is pizza day at school. Fat and protein will cause a delayed BG rise. Smart strategy?"
+    time: "12:00"
+    options:
+      - text: "Bolus normally and check your CGM more frequently in the afternoon"
+        glucose_delta: -10
+        effect_after: 120
+      - text: "Skip the bolus since pizza does not have many carbs"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "Double your bolus to cover the delayed rise"
+        glucose_delta: -40
+        effect_after: 60
+      - text: "Avoid pizza entirely and eat a packed lunch"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Bolus normally and check your CGM more frequently in the afternoon"
+
+  - question: "Your BG is 75 mg/dL right before lunch. What should you do before bolusing?"
+    time: "12:00"
+    options:
+      - text: "Eat 15g of fast carbs first, then bolus when BG is stable"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Bolus your full meal dose immediately and eat quickly"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Skip your bolus entirely for this meal"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "Cut your bolus dose in half and eat your full meal"
+        glucose_delta: 20
+        effect_after: 60
+    answer: "Eat 15g of fast carbs first, then bolus when BG is stable"
+
+  - question: "You forgot to bolus before your meal and you are halfway through eating. What now?"
+    time: "12:15"
+    options:
+      - text: "Bolus now for the remaining carbs and monitor for a post-meal spike"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Skip the bolus since the food is already partially digested"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "Take your full meal bolus and eat nothing else"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Wait until your next meal to correct"
+        glucose_delta: 45
+        effect_after: 60
+    answer: "Bolus now for the remaining carbs and monitor for a post-meal spike"
+
+  # ── PE & EXERCISE ────────────────────────────────────────────────────────
+  - question: "Your BG is 110 mg/dL right before PE class. What should you do?"
+    time: "13:00"
+    options:
+      - text: "Eat 15-20g of carbs to bring your BG up before the activity"
+        glucose_delta: 20
+        effect_after: 15
+      - text: "Take a small correction bolus before exercising"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Skip PE to keep your blood sugar stable"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Start PE and check your BG only if you feel bad"
+        glucose_delta: -20
+        effect_after: 30
+    answer: "Eat 15-20g of carbs to bring your BG up before the activity"
+
+  - question: "Halfway through PE your CGM shows 58 mg/dL. You feel dizzy and weak."
+    time: "13:30"
+    options:
+      - text: "Stop activity immediately, eat fast carbs, and sit down"
+        glucose_delta: 30
+        effect_after: 15
+      - text: "Push through until the period ends"
+        glucose_delta: -25
+        effect_after: 30
+      - text: "Drink water and keep moving at a slower pace"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "Take a small insulin dose to stabilize"
+        glucose_delta: -30
+        effect_after: 30
+    answer: "Stop activity immediately, eat fast carbs, and sit down"
+
+  - question: "Your BG is 310 mg/dL and you have ketones before PE class. Should you exercise?"
+    time: "13:00"
+    options:
+      - text: "No — exercise with ketones can make DKA worse; treat first"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Yes — exercise will help bring the blood sugar down"
+        glucose_delta: 20
+        effect_after: 30
+      - text: "Yes, but only light stretching"
+        glucose_delta: 10
+        effect_after: 30
+      - text: "Yes — physical activity burns off ketones directly"
+        glucose_delta: 15
+        effect_after: 30
+    answer: "No — exercise with ketones can make DKA worse; treat first"
+
+  - question: "You have a basketball game after school. What should you do with your insulin pump?"
+    time: "15:30"
+    options:
+      - text: "Set a temporary reduced basal rate before and during the game"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Give a large bolus before the game to cover extra activity"
+        glucose_delta: -40
+        effect_after: 30
+      - text: "Disconnect the pump completely for the entire game"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "Keep settings the same and check BG only after the game"
+        glucose_delta: -25
+        effect_after: 60
+    answer: "Set a temporary reduced basal rate before and during the game"
+
+  - question: "After soccer your BG is 85 mg/dL and you feel okay. What should you remember?"
+    time: "16:00"
+    options:
+      - text: "Exercise can cause BG to drop for hours after; monitor closely and snack if needed"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "Your blood sugar is fine — no action needed"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Give a correction dose since 85 is trending toward low"
+        glucose_delta: -25
+        effect_after: 30
+      - text: "Eat a large meal with a full bolus right away"
+        glucose_delta: 30
+        effect_after: 60
+    answer: "Exercise can cause BG to drop for hours after; monitor closely and snack if needed"
+
+  # ── SNACKS & AFTERNOON ───────────────────────────────────────────────────
+  - question: "Your afternoon snack has 20g of carbs and BG is in range. ICR is 1:15. What do you do?"
+    time: "14:30"
+    options:
+      - text: "Bolus about 1.3 units to cover the snack"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "Skip the bolus since 20 grams is a small amount"
+        glucose_delta: 25
+        effect_after: 60
+      - text: "Take a full 3-unit bolus to be safe"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Eat the snack and check your blood sugar in 2 hours"
+        glucose_delta: 20
+        effect_after: 120
+    answer: "Bolus about 1.3 units to cover the snack"
+
+  - question: "You are hungry at 2 PM but your CGM shows 195 mg/dL. What is the smartest choice?"
+    time: "14:00"
+    options:
+      - text: "Choose a low-carb snack and monitor; wait for BG to come down"
+        glucose_delta: -15
+        effect_after: 60
+      - text: "Eat a full snack with a correction bolus"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "Skip the snack entirely and wait for dinner"
+        glucose_delta: -5
+        effect_after: 120
+      - text: "Take a correction bolus and then eat a high-carb snack"
+        glucose_delta: 15
+        effect_after: 60
+    answer: "Choose a low-carb snack and monitor; wait for BG to come down"
+
+  - question: "Your BG is 55 mg/dL at 3 PM and you feel fine. No symptoms. What should you do?"
+    time: "15:00"
+    options:
+      - text: "Treat the low with 15g of fast carbs even though you feel okay"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Feeling fine means no action is needed — check again at dismissal"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Drink water to help flush out the low"
+        glucose_delta: 0
+        effect_after: 30
+      - text: "Take a glucose tablet only if symptoms start"
+        glucose_delta: -10
+        effect_after: 30
+    answer: "Treat the low with 15g of fast carbs even though you feel okay"
+
+  - question: "BG has been 80-130 all day. You have a 30-minute walk home. Smart precaution?"
+    time: "16:00"
+    options:
+      - text: "Eat a small 10-15g carb snack before the walk to prevent a low"
+        glucose_delta: 15
+        effect_after: 15
+      - text: "Nothing — your BG is great so no changes needed"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Give a small correction bolus before walking"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Skip the walk and take the bus"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Eat a small 10-15g carb snack before the walk to prevent a low"
+
+  - question: "Your pump alarms No Delivery at 2:30 PM. BG is 280 mg/dL. What do you do?"
+    time: "14:30"
+    options:
+      - text: "Check the site, tell the nurse, and use your MDI backup if needed"
+        glucose_delta: -40
+        effect_after: 60
+      - text: "Silence the alarm and wait to see if it clears"
+        glucose_delta: 25
+        effect_after: 60
+      - text: "Remove the pump and go home immediately"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Eat nothing until your blood sugar comes down"
+        glucose_delta: -5
+        effect_after: 120
+    answer: "Check the site, tell the nurse, and use your MDI backup if needed"
+
+  # ── EMERGENCIES ──────────────────────────────────────────────────────────
+  - question: "You feel extremely shaky during a test and cannot remember where your snacks are."
+    time: "10:00"
+    options:
+      - text: "Raise your hand immediately and tell the teacher you need help right away"
+        glucose_delta: 20
+        effect_after: 15
+      - text: "Try to finish the test first"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Put your head down and wait for it to pass"
+        glucose_delta: -25
+        effect_after: 30
+      - text: "Walk to the nurse on your own without telling anyone"
+        glucose_delta: -15
+        effect_after: 15
+    answer: "Raise your hand immediately and tell the teacher you need help right away"
+
+  - question: "Your BG drops to 38 mg/dL and you are too weak to chew or swallow safely."
+    time: "11:00"
+    options:
+      - text: "Glucagon should be administered and 911 called"
+        glucose_delta: 40
+        effect_after: 15
+      - text: "A friend should help you drink juice slowly"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "You should wait for your body to recover naturally"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "A correction insulin dose should be given"
+        glucose_delta: -40
+        effect_after: 30
+    answer: "Glucagon should be administered and 911 called"
+
+  - question: "You have been vomiting. BG is 290 mg/dL, ketones 1.0 mmol/L. What do you do?"
+    time: "09:00"
+    options:
+      - text: "Tell a parent or nurse right away — sick day rules mean you still need insulin"
+        glucose_delta: -40
+        effect_after: 60
+      - text: "Stop all insulin since you cannot eat"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "Eat crackers to settle your stomach before checking again"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "Drink juice to bring ketones down"
+        glucose_delta: 20
+        effect_after: 60
+    answer: "Tell a parent or nurse right away — sick day rules mean you still need insulin"
+
+  - question: "Your ketones are 1.8 mmol/L and BG is 340 mg/dL. What is the most important thing to do?"
+    time: "09:00"
+    options:
+      - text: "Contact a parent and your diabetes care team immediately"
+        glucose_delta: -50
+        effect_after: 60
+      - text: "Exercise to burn off the ketones"
+        glucose_delta: 15
+        effect_after: 30
+      - text: "Drink a sports drink to hydrate"
+        glucose_delta: 15
+        effect_after: 30
+      - text: "Take an extra snack and recheck in 2 hours"
+        glucose_delta: 20
+        effect_after: 120
+    answer: "Contact a parent and your diabetes care team immediately"
+
+  - question: "At recess you are confused and slurring your words. CGM reads 41 mg/dL. What happens?"
+    time: "10:30"
+    options:
+      - text: "Call for help immediately and use emergency glucagon"
+        glucose_delta: 40
+        effect_after: 15
+      - text: "Walk to the nurse slowly"
+        glucose_delta: -15
+        effect_after: 15
+      - text: "Give you water to drink"
+        glucose_delta: -5
+        effect_after: 30
+      - text: "Let you sit quietly until you feel better"
+        glucose_delta: -20
+        effect_after: 30
+    answer: "Call for help immediately and use emergency glucagon"
+
+  # ── DEVICE USE ───────────────────────────────────────────────────────────
+  - question: "Your CGM shows a double down arrow. BG falling fast. You feel okay. What do you do?"
+    time: "14:00"
+    options:
+      - text: "Eat fast-acting carbs now and watch closely — a low is coming soon"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Wait for symptoms before acting since the sensor might be wrong"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Take a correction bolus to stabilize"
+        glucose_delta: -25
+        effect_after: 30
+      - text: "Drink water and sit still"
+        glucose_delta: -10
+        effect_after: 30
+    answer: "Eat fast-acting carbs now and watch closely — a low is coming soon"
+
+  - question: "CGM says 95, fingerstick says 215. You are about to bolus for lunch. Which do you trust?"
+    time: "12:00"
+    options:
+      - text: "The fingerstick because it is a direct blood sample"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "The CGM since it is more advanced technology"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Average them and bolus for 155"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Skip the bolus and recheck in 30 minutes"
+        glucose_delta: 30
+        effect_after: 30
+    answer: "The fingerstick because it is a direct blood sample"
+
+  - question: "Pump site has been in 4 days. Blood sugar elevated all morning despite normal boluses."
+    time: "10:00"
+    options:
+      - text: "Change your pump site — overused sites absorb insulin poorly"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Increase your ICR temporarily"
+        glucose_delta: -15
+        effect_after: 60
+      - text: "Switch to a lower-carb lunch"
+        glucose_delta: -5
+        effect_after: 120
+      - text: "Check your CGM sensor instead"
+        glucose_delta: 10
+        effect_after: 60
+    answer: "Change your pump site — overused sites absorb insulin poorly"
+
+  - question: "You left your insulin pump in a hot car for 2 hours on a summer day. What do you do?"
+    time: "15:00"
+    options:
+      - text: "Replace the insulin since heat can make it ineffective"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Use it — it is probably still fine"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "Shake the reservoir to mix the insulin"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Refrigerate it and use it the next day"
+        glucose_delta: 25
+        effect_after: 60
+    answer: "Replace the insulin since heat can make it ineffective"
+
+  - question: "Your CGM sensor is warming up and not reading yet. It has been 90 minutes since breakfast."
+    time: "09:30"
+    options:
+      - text: "Use a fingerstick to check your blood sugar while the sensor warms up"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Do nothing and wait for the sensor to warm up"
+        glucose_delta: -15
+        effect_after: 60
+      - text: "Skip your snack since you cannot confirm your BG"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Take a precautionary correction bolus"
+        glucose_delta: -25
+        effect_after: 30
+    answer: "Use a fingerstick to check your blood sugar while the sensor warms up"
+
+  # ── CARB COUNTING ────────────────────────────────────────────────────────
+  - question: "You estimate 65g carbs for lunch. ICR is 1:10. How much do you bolus?"
+    time: "12:00"
+    options:
+      - text: "6.5 units"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "5.5 units"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "6 units"
+        glucose_delta: 5
+        effect_after: 60
+      - text: "7 units"
+        glucose_delta: -10
+        effect_after: 60
+    answer: "6.5 units"
+
+  - question: "Pasta with cream sauce — why might BG spike 3-4 hours later instead of right after?"
+    time: "12:00"
+    options:
+      - text: "Fat slows digestion so glucose enters your blood more slowly over time"
+        glucose_delta: -10
+        effect_after: 120
+      - text: "Fat speeds up carb absorption"
+        glucose_delta: 30
+        effect_after: 30
+      - text: "Protein blocks the insulin from working"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Cream sauce has a hidden sugar spike built in"
+        glucose_delta: 25
+        effect_after: 60
+    answer: "Fat slows digestion so glucose enters your blood more slowly over time"
+
+  - question: "You are at a birthday party and cannot count the exact carbs in the cake. Strategy?"
+    time: "12:00"
+    options:
+      - text: "Make a careful estimate, bolus conservatively, and check your BG 1-2 hours later"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "Skip the cake entirely"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Eat the cake and skip your next meal bolus"
+        glucose_delta: 35
+        effect_after: 60
+      - text: "Take double your usual bolus to be safe"
+        glucose_delta: -35
+        effect_after: 60
+    answer: "Make a careful estimate, bolus conservatively, and check your BG 1-2 hours later"
+
+  - question: "A food label shows 30g carbs per serving but 8g fiber. How many net carbs do you count?"
+    time: "12:00"
+    options:
+      - text: "22g"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "38g"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "30g"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "8g"
+        glucose_delta: 20
+        effect_after: 60
+    answer: "22g"
+
+  - question: "You drink 8 oz of OJ to treat a low. The label says 26g carbs. Did you treat correctly?"
+    time: "10:00"
+    options:
+      - text: "No — 26g is too much for a standard low treatment; 15g is the target"
+        glucose_delta: -10
+        effect_after: 0
+      - text: "Yes — drink as much juice as needed"
+        glucose_delta: 25
+        effect_after: 30
+      - text: "No — juice does not count as a fast carb"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Yes — always drink a full bottle"
+        glucose_delta: 30
+        effect_after: 30
+    answer: "No — 26g is too much for a standard low treatment; 15g is the target"
+
+  # ── HIGH BLOOD SUGAR ─────────────────────────────────────────────────────
+  - question: "BG is 260 mg/dL before lunch. You feel thirsty and need to use the bathroom a lot."
+    time: "12:00"
+    options:
+      - text: "Give a correction bolus based on your ISF, drink water, and tell the nurse"
+        glucose_delta: -50
+        effect_after: 60
+      - text: "Eat lunch as normal and correct later"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Skip lunch since your blood sugar is already high"
+        glucose_delta: -10
+        effect_after: 120
+      - text: "Wait until your next scheduled check"
+        glucose_delta: 15
+        effect_after: 60
+    answer: "Give a correction bolus based on your ISF, drink water, and tell the nurse"
+
+  - question: "You notice fruity breath and feel nauseous. Your BG is 340 mg/dL. Signs of what?"
+    time: "09:00"
+    options:
+      - text: "DKA — check ketones and contact an adult right away"
+        glucose_delta: -40
+        effect_after: 60
+      - text: "A stomach virus — eat crackers"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Dehydration from exercise"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "An allergic reaction"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "DKA — check ketones and contact an adult right away"
+
+  - question: "BG has been above 250 for 3 hours despite one correction bolus. What next?"
+    time: "14:00"
+    options:
+      - text: "Check pump site, check ketones, drink water, and contact a parent or nurse"
+        glucose_delta: -40
+        effect_after: 60
+      - text: "Take another large correction dose on your own"
+        glucose_delta: -60
+        effect_after: 60
+      - text: "Exercise to bring the blood sugar down quickly"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "Eat a low-carb snack to balance things out"
+        glucose_delta: 10
+        effect_after: 60
+    answer: "Check pump site, check ketones, drink water, and contact a parent or nurse"
+
+  - question: "You forgot to bolus for your afternoon snack. BG is now 230 mg/dL. Correct action?"
+    time: "15:00"
+    options:
+      - text: "Take a correction bolus based on your ISF and target BG"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Take a full meal bolus to compensate"
+        glucose_delta: -50
+        effect_after: 60
+      - text: "Skip dinner to avoid another spike"
+        glucose_delta: -5
+        effect_after: 120
+      - text: "Do nothing since it will normalize by bedtime"
+        glucose_delta: 15
+        effect_after: 60
+    answer: "Take a correction bolus based on your ISF and target BG"
+
+  - question: "You are sluggish and cannot concentrate in class. BG is 290 mg/dL. What does high BG do?"
+    time: "14:00"
+    options:
+      - text: "It can make it harder to focus, remember things, and react quickly"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Nothing — blood sugar only affects your body, not your brain"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "It makes you sleepy but does not affect learning"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "It improves concentration by giving the brain more glucose"
+        glucose_delta: 20
+        effect_after: 60
+    answer: "It can make it harder to focus, remember things, and react quickly"
+
+  # ── LOW BLOOD SUGAR ──────────────────────────────────────────────────────
+  - question: "You treated a low with juice. 15 minutes later BG is still 64 mg/dL. What do you do?"
+    time: "10:15"
+    options:
+      - text: "Treat again with another 15g of fast carbs and recheck"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Wait another 30 minutes before doing anything else"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "Take a correction bolus to help stabilize"
+        glucose_delta: -25
+        effect_after: 30
+      - text: "Eat a full meal immediately"
+        glucose_delta: 10
+        effect_after: 60
+    answer: "Treat again with another 15g of fast carbs and recheck"
+
+  - question: "You have frequent lows between 10 AM and 12 PM every day this week. Likely cause?"
+    time: "10:00"
+    options:
+      - text: "Your morning basal dose or breakfast bolus may be too high"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Your lunch is too small"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "Your CGM sensor needs replacing"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "You are not drinking enough water"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Your morning basal dose or breakfast bolus may be too high"
+
+  - question: "You feel low but your CGM says 102 mg/dL. What is the right move?"
+    time: "11:00"
+    options:
+      - text: "Do a fingerstick to confirm — symptoms can precede a CGM drop"
+        glucose_delta: 15
+        effect_after: 15
+      - text: "Trust the CGM and ignore the feeling"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Take a correction bolus since the CGM must be wrong"
+        glucose_delta: -30
+        effect_after: 30
+      - text: "Eat a large snack just in case"
+        glucose_delta: 40
+        effect_after: 30
+    answer: "Do a fingerstick to confirm — symptoms can precede a CGM drop"
+
+  - question: "BG is 78 mg/dL with a down arrow before your math test. What should you do?"
+    time: "09:00"
+    options:
+      - text: "Eat 15g of fast carbs before starting and let the teacher know"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Start the test and eat something if you feel bad"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Skip the test today"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Ask the teacher to postpone while you take insulin"
+        glucose_delta: -25
+        effect_after: 30
+    answer: "Eat 15g of fast carbs before starting and let the teacher know"
+
+  - question: "Your friend notices you are giggling at nothing and not making sense at lunch."
+    time: "12:00"
+    options:
+      - text: "You may have low blood sugar affecting your brain — check BG immediately"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "You are just tired"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "You are stressed about a test"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "You ate too fast"
+        glucose_delta: -5
+        effect_after: 30
+    answer: "You may have low blood sugar affecting your brain — check BG immediately"
+
+  # ── BEFORE & AFTER SCHOOL ────────────────────────────────────────────────
+  - question: "You wake up at 55 mg/dL. After treating, BG is 95 mg/dL. Should you take your breakfast bolus?"
+    time: "07:00"
+    options:
+      - text: "Yes — confirm BG is stable and eat the meal right away so insulin is covered"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "Yes — take it at the full dose immediately"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Skip the bolus since you just had a low"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "Cut the bolus in half permanently going forward"
+        glucose_delta: 20
+        effect_after: 60
+    answer: "Yes — confirm BG is stable and eat the meal right away so insulin is covered"
+
+  - question: "Walking home from school you start to feel shaky. You have glucose tabs."
+    time: "16:15"
+    options:
+      - text: "Stop, eat 15g of carbs, wait 15 minutes, recheck before continuing"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Keep walking and check when you get home"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Run home quickly so you can check your BG there"
+        glucose_delta: -20
+        effect_after: 15
+      - text: "Call a friend to walk with you and check later"
+        glucose_delta: -10
+        effect_after: 30
+    answer: "Stop, eat 15g of carbs, wait 15 minutes, recheck before continuing"
+
+  - question: "Swim practice after school. BG is 130 mg/dL when practice starts."
+    time: "16:00"
+    options:
+      - text: "Eat a small 15-20g carb snack since swimming is aerobic and can drop BG quickly"
+        glucose_delta: 15
+        effect_after: 15
+      - text: "Take your usual afternoon correction bolus"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Nothing — 130 is in range"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Skip practice if you cannot get your BG above 200"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Eat a small 15-20g carb snack since swimming is aerobic and can drop BG quickly"
+
+  - question: "You get home and CGM shows 165 mg/dL. You want a 30g carb snack. ICR is 1:15."
+    time: "16:30"
+    options:
+      - text: "2 units"
+        glucose_delta: 0
+        effect_after: 60
+      - text: "1 unit"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "3 units"
+        glucose_delta: -15
+        effect_after: 60
+      - text: "No bolus needed"
+        glucose_delta: 25
+        effect_after: 60
+    answer: "2 units"
+
+  - question: "Your BG before bed is 210 mg/dL. Should you take a correction dose?"
+    time: "21:00"
+    options:
+      - text: "Yes — follow your correction formula based on ISF and target, then tell a parent"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "No — never take insulin at night"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Skip it and wake up early to recheck"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "Eat a small snack to help your body balance out"
+        glucose_delta: 20
+        effect_after: 60
+    answer: "Yes — follow your correction formula based on ISF and target, then tell a parent"
+
+  # ── KNOWING WHEN TO ASK FOR HELP ────────────────────────────────────────
+  - question: "BG keeps going lower every hour despite treating each time. What should you do?"
+    time: "11:00"
+    options:
+      - text: "Get an adult involved immediately — persistent lows need medical attention"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Keep eating glucose tabs on your own"
+        glucose_delta: 5
+        effect_after: 30
+      - text: "Rest quietly and see if it stabilizes"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "Take a small insulin dose to stop the pattern"
+        glucose_delta: -25
+        effect_after: 30
+    answer: "Get an adult involved immediately — persistent lows need medical attention"
+
+  - question: "BG has been 60-75 mg/dL all morning after two treatments. You have PE next. What do you tell the PE teacher?"
+    time: "12:45"
+    options:
+      - text: "Tell the teacher your BG has been low all morning and you may need close monitoring"
+        glucose_delta: 15
+        effect_after: 15
+      - text: "Nothing — you can manage it yourself during class"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Do PE and check your BG only if you feel bad"
+        glucose_delta: -25
+        effect_after: 30
+      - text: "Ask to go home before PE starts"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Tell the teacher your BG has been low all morning and you may need close monitoring"
+
+  - question: "You think your insulin may have gone bad — BG keeps running high. Who do you contact?"
+    time: "10:00"
+    options:
+      - text: "A parent and your diabetes care team to assess and replace your insulin if needed"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Your school cafeteria manager"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "The nurse — she can test the insulin"
+        glucose_delta: -5
+        effect_after: 60
+      - text: "No one — just increase your doses to compensate"
+        glucose_delta: -30
+        effect_after: 60
+    answer: "A parent and your diabetes care team to assess and replace your insulin if needed"
+
+  - question: "On a field trip you left your fast-acting carbs on the bus. You start to feel low."
+    time: "11:00"
+    options:
+      - text: "Tell a chaperone immediately so they can find you carbs or call for help"
+        glucose_delta: 20
+        effect_after: 15
+      - text: "Ignore it since you probably just need water"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Walk back to the bus alone to get your supplies"
+        glucose_delta: -15
+        effect_after: 15
+      - text: "Sit down and wait for the bus to come back"
+        glucose_delta: -20
+        effect_after: 30
+    answer: "Tell a chaperone immediately so they can find you carbs or call for help"
+
+  - question: "You are embarrassed to check your BG in front of classmates. What is the best solution?"
+    time: "10:00"
+    options:
+      - text: "Talk to your parents and school nurse about where you can check privately"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Skip checks during school to avoid attention"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Only check in the bathroom to stay hidden"
+        glucose_delta: -5
+        effect_after: 60
+      - text: "Rely on how you feel instead of checking"
+        glucose_delta: -20
+        effect_after: 60
+    answer: "Talk to your parents and school nurse about where you can check privately"
+
+  # ── UNDERSTANDING YOUR CONDITION ─────────────────────────────────────────
+  - question: "Why do you need insulin every day even when your blood sugar is normal?"
+    time: "08:00"
+    options:
+      - text: "Your body cannot make any insulin at all — you need it to process all food and to survive"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Insulin only matters when blood sugar is high"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "Insulin helps you grow faster"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "You only need insulin when you eat carbs"
+        glucose_delta: 25
+        effect_after: 60
+    answer: "Your body cannot make any insulin at all — you need it to process all food and to survive"
+
+  - question: "Why does stress at school sometimes raise your blood sugar even if you haven't eaten?"
+    time: "10:00"
+    options:
+      - text: "Stress hormones like cortisol tell your liver to release extra glucose into the blood"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Stress has no effect on blood sugar"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "Stress makes you crave sugar and eat without realizing it"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "Stress causes your kidneys to hold on to sugar"
+        glucose_delta: 10
+        effect_after: 60
+    answer: "Stress hormones like cortisol tell your liver to release extra glucose into the blood"
+
+  - question: "What does a flat arrow on your CGM mean?"
+    time: "10:00"
+    options:
+      - text: "Your blood sugar is stable and not moving significantly"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Your blood sugar is dropping fast"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Your sensor has lost signal"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Your blood sugar is rising slowly"
+        glucose_delta: 10
+        effect_after: 30
+    answer: "Your blood sugar is stable and not moving significantly"
+
+  - question: "Why is it important to rotate your pump sites or injection spots?"
+    time: "07:30"
+    options:
+      - text: "Repeated use of the same spot causes scar tissue that blocks insulin absorption"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "To prevent skin infections only"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "To prevent bruising only"
+        glucose_delta: 10
+        effect_after: 60
+      - text: "The pump alarm will go off if you do not rotate"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Repeated use of the same spot causes scar tissue that blocks insulin absorption"
+
+  - question: "What is the honeymoon period in Type 1 diabetes?"
+    time: "08:00"
+    options:
+      - text: "A temporary period after diagnosis when remaining beta cells still make a little insulin"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "A phase where you no longer need insulin"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "A reward phase for good blood sugar control"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "A rest period between meals when BG stays stable naturally"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "A temporary period after diagnosis when remaining beta cells still make a little insulin"
+
+  # ── ILLNESS & SPECIAL SITUATIONS ─────────────────────────────────────────
+  - question: "You have a cold and BG is 280 mg/dL even though you barely ate. Skip insulin?"
+    time: "08:00"
+    options:
+      - text: "No — illness raises blood sugar and you may need more insulin; follow your sick day plan"
+        glucose_delta: -40
+        effect_after: 60
+      - text: "Yes — you are not eating so you do not need insulin"
+        glucose_delta: 30
+        effect_after: 60
+      - text: "Skip basal insulin but keep meal boluses"
+        glucose_delta: 25
+        effect_after: 60
+      - text: "Only take insulin if your BG goes above 350"
+        glucose_delta: 30
+        effect_after: 60
+    answer: "No — illness raises blood sugar and you may need more insulin; follow your sick day plan"
+
+  - question: "You are sick and cannot keep food down. Ketones 0.5 mmol/L, BG 240 mg/dL. What do you do?"
+    time: "08:00"
+    options:
+      - text: "Sip on clear fluids, keep taking basal insulin, and contact your care team"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Eat crackers and resume normal insulin dosing"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "Give yourself an extra correction bolus and rest"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Skip all insulin until you can keep food down"
+        glucose_delta: 30
+        effect_after: 60
+    answer: "Sip on clear fluids, keep taking basal insulin, and contact your care team"
+
+  - question: "Your class has a holiday party with lots of sweet foods. Most responsible approach?"
+    time: "13:00"
+    options:
+      - text: "Estimate carbs, bolus appropriately, and enjoy the party while monitoring your CGM"
+        glucose_delta: 5
+        effect_after: 60
+      - text: "Avoid everything to keep your blood sugar safe"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Eat freely since it is a special occasion"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "Ask your parents to come to the party to supervise"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Estimate carbs, bolus appropriately, and enjoy the party while monitoring your CGM"
+
+  - question: "You are going on an overnight class trip. Most important thing to prepare in advance?"
+    time: "07:00"
+    options:
+      - text: "Full diabetes kit, sick day plan, emergency glucagon, and adults who know your care plan"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Pack extra clothes"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Tell only your best friend about your diabetes"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Skip the trip to avoid managing diabetes away from home"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Full diabetes kit, sick day plan, emergency glucagon, and adults who know your care plan"
+
+  - question: "It is extremely hot on the day of a school outdoor event. What should you watch out for?"
+    time: "09:00"
+    options:
+      - text: "Heat can make insulin degrade and work unpredictably — keep it out of direct sunlight"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Heat makes insulin work more slowly"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Heat has no effect on insulin"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "Refrigerate your insulin pump to keep it safe"
+        glucose_delta: 10
+        effect_after: 60
+    answer: "Heat can make insulin degrade and work unpredictably — keep it out of direct sunlight"
+
+  # ── SELF-ADVOCACY ────────────────────────────────────────────────────────
+  - question: "A new substitute teacher does not know about your diabetes. You feel a low coming on."
+    time: "10:00"
+    options:
+      - text: "Calmly tell the teacher you have T1D, may be having a low, and need to eat right now"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Go to your backpack quietly and hope they do not notice"
+        glucose_delta: -10
+        effect_after: 30
+      - text: "Walk out of class to the nurse without saying anything"
+        glucose_delta: -15
+        effect_after: 15
+      - text: "Raise your hand and ask to go to the bathroom"
+        glucose_delta: -15
+        effect_after: 15
+    answer: "Calmly tell the teacher you have T1D, may be having a low, and need to eat right now"
+
+  - question: "Your friend says 'I thought diabetics cannot have sugar.' What do you tell them?"
+    time: "12:00"
+    options:
+      - text: "People with T1D can eat sugar but need to count carbs and dose insulin correctly"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "They are right — you cannot have any sugar"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "You only avoid sugar when your blood sugar is high"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Diabetes means you need more sugar than other people"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "People with T1D can eat sugar but need to count carbs and dose insulin correctly"
+
+  - question: "You want to join the school basketball team. Your T1D is well-controlled. Can you?"
+    time: "15:00"
+    options:
+      - text: "Yes — with a good management plan including BG checks, snacks, and a CGM"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "No — contact sports are too risky for kids with T1D"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Only if a nurse is present at every practice"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Only if your blood sugar stays above 200 during games"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Yes — with a good management plan including BG checks, snacks, and a CGM"
+
+  - question: "You notice your blood sugars run higher every Monday. What do you investigate?"
+    time: "08:00"
+    options:
+      - text: "Think about what is different on Mondays — sleep, stress, activity, Sunday night meals"
+        glucose_delta: -10
+        effect_after: 60
+      - text: "Monday school lunches are probably different"
+        glucose_delta: -5
+        effect_after: 60
+      - text: "Your CGM sensor always expires over the weekend"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Monday weather affects blood sugar"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Think about what is different on Mondays — sleep, stress, activity, Sunday night meals"
+
+  - question: "Your endocrinologist says your time in range needs improvement. What does that mean?"
+    time: "08:00"
+    options:
+      - text: "The percent of time BG stays 70-180 mg/dL — improve with consistent carb counting and timely boluses"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Time in range means how often you check your blood sugar — check more often"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Time in range means staying awake to check your BG at night"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Time in range only matters for adults with diabetes"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "The percent of time BG stays 70-180 mg/dL — improve with consistent carb counting and timely boluses"
+
+  # ── PUTTING IT ALL TOGETHER ──────────────────────────────────────────────
+  - question: "Wake BG 105. Ate 45g. ICR 1:15. Walked 20 min to school. Arrived BG 82 with down arrow."
+    time: "09:00"
+    options:
+      - text: "Eat 15g of fast carbs right away since exercise dropped you and you are trending down"
+        glucose_delta: 25
+        effect_after: 15
+      - text: "Nothing — 82 is still in range"
+        glucose_delta: -15
+        effect_after: 30
+      - text: "Take a small correction bolus"
+        glucose_delta: -20
+        effect_after: 30
+      - text: "Tell the nurse and wait for instructions"
+        glucose_delta: -10
+        effect_after: 15
+    answer: "Eat 15g of fast carbs right away since exercise dropped you and you are trending down"
+
+  - question: "Wednesday: you have PE, a math test, and a birthday party at lunch. Best overall strategy?"
+    time: "08:00"
+    options:
+      - text: "Check BG more frequently, prepare snacks for PE, estimate cake carbs, bolus carefully"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Skip the party food and stay in the nurses office during PE"
+        glucose_delta: -5
+        effect_after: 60
+      - text: "Double your basal rate all day to handle any spikes"
+        glucose_delta: -30
+        effect_after: 60
+      - text: "Call your parents to come manage everything for you"
+        glucose_delta: 0
+        effect_after: 0
+    answer: "Check BG more frequently, prepare snacks for PE, estimate cake carbs, bolus carefully"
+
+  - question: "Your CGM alarms at the same time every day around 2 PM showing a drop. Smartest first step?"
+    time: "14:00"
+    options:
+      - text: "Log the pattern and discuss adjusting your midday basal rate or adding an afternoon snack"
+        glucose_delta: 15
+        effect_after: 60
+      - text: "Increase your lunch bolus to fix the afternoon drop"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Eat a larger lunch to prevent the drop"
+        glucose_delta: 20
+        effect_after: 60
+      - text: "Ignore it since CGMs alarm often for no reason"
+        glucose_delta: -15
+        effect_after: 30
+    answer: "Log the pattern and discuss adjusting your midday basal rate or adding an afternoon snack"
+
+  - question: "It is field day — lots of running, big cookout lunch, and cake. How do you approach it?"
+    time: "08:00"
+    options:
+      - text: "Check BG frequently, adjust for activity, count carbs carefully, monitor post-cake"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "Eat freely and worry about blood sugar control tomorrow"
+        glucose_delta: 40
+        effect_after: 60
+      - text: "Skip all insulin for the day since you are so active"
+        glucose_delta: 50
+        effect_after: 60
+      - text: "Only check BG at lunch and dismissal"
+        glucose_delta: -20
+        effect_after: 60
+    answer: "Check BG frequently, adjust for activity, count carbs carefully, monitor post-cake"
+
+  - question: "You have managed T1D for 5 years and start skipping some BG checks. Why still monitor?"
+    time: "08:00"
+    options:
+      - text: "Blood sugar can change without symptoms; consistent data helps spot patterns and prevent lows and highs"
+        glucose_delta: 0
+        effect_after: 0
+      - text: "It is not — experienced kids with T1D can rely on how they feel"
+        glucose_delta: -20
+        effect_after: 60
+      - text: "Monitoring is only important in the first year after diagnosis"
+        glucose_delta: -15
+        effect_after: 60
+      - text: "You only need to check if your CGM alarms"
+        glucose_delta: -15
+        effect_after: 60
+    answer: "Blood sugar can change without symptoms; consistent data helps spot patterns and prevent lows and highs"
